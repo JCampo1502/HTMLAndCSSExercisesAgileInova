@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 02 - Formularios</title>
+    <link rel="stylesheet" href="../../styles/normalize.css">
+    <link rel="stylesheet" href="../../styles/section05/task02.css">
+</head>
+<body>
+     <main class="container">
+        <section class="container__section">
+            <article class="modal">
+                <img src="../../assets/section05/cross.svg" alt="close icon" class="form__icon form__icon--close">
+                <h1 class="modal__title">                    
+                    Registrate 
+                    <em class="modal__em">
+                        Es rápido y fácil
+                    </em>
+                </h1>
+                <form class="form">
+                    <input required type="text" class="form__input form__input--name" placeholder="Nombre">
+                    <input required type="text" class="form__input form__input--name" placeholder="Apellido">
+                    <input required type="email" class="form__input form__input--email" placeholder="Número de celular o correo electrónico">
+                    <input required type="password" class="form__input form__input--password" placeholder="Contraseña nueva">
+                    <div class="form__group">
+                        <div class="form__info">
+                            <span class="form__section">Fecha de nacimiento </span>
+                            <img src="../../assets/section05/interrogation.svg" alt="info" class="form__icon form__icon--info">
+                        </div>
+                        <input required type="number" class="form__input form__input--date" value="8" placeholder="Dia">
+                        <select class="form__select form__select--date">
+                            <option value="1">Ene</option>
+                            <option value="2">Feb</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Abr</option>
+                            <option value="5">May</option>
+                            <option value="6">Jun</option>
+                            <option value="7" selected>Jul</option>
+                            <option value="8">Ago</option>
+                            <option value="9">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dic</option>
+                        </select>
+                        <input required type="number" class="form__input form__input--date" value="2021" placeholder="Año">
+                    </div>
+                    <div class="form__group">
+                        <div class="form__info">
+                            <span class="form__section">Sexo</span>
+                            <img src="../../assets/section05/interrogation.svg" alt="info" class="form__icon form__icon--info">
+                        </div>
+                        <label class="form__label">
+                            Mujer
+                            <input required type="radio" name="gender" class="form__input form__input--radio">
+                        </label>
+                        <label class="form__label">
+                            Hombre
+                            <input required type="radio" name="gender" class="form__input form__input--radio">
+                        </label>
+                        <label class="form__label">
+                            Personalizado
+                            <input required type="radio" name="gender" class="form__input form__input--radio">
+                        </label>
+                    </div>
+                    <p class="form__policy">
+                        Al hacer clic en "Registrate", aceptas nuestras <a href="#" class="form__link">Condiciones</a>, la <a href="#" class="form__link">Política de datos</a> y la <a href="#" class="form__link">Política de cookies</a>. Es posible que te enviemos notificacions por SMS, que no puedes desactivar cuando quieras
+                    </p>
+                    <button class="form__submit" type="submit">Registrarte</button>
+                </form>
+            </article>
+        </section>
+     </main>
+</body>
+</html>

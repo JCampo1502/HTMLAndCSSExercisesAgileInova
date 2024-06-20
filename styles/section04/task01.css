@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+*{
+    font-family: "Noto Sans", sans-serif;
+    box-sizing: border-box;
+    font-optical-sizing: auto;    
+    font-style: normal;
+}
+
+body{    
+    background: #1a8ffd;
+}
+
+.container{    
+    width: 1320px;
+    margin: auto;
+    margin-top: 4rem;
+    background:#212021;
+}
+
+.nav__list{
+    padding:0
+}
+
+.poster{
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+.poster::before{
+    content: "";
+     border-left: 1320px solid transparent;
+    border-right: 0px solid transparent;
+    border-bottom: 90px solid #ffffff;
+    
+    height: 115px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 100;    
+}
+
+.poster::after{
+    content: "";
+     border-left: 0px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 600px solid #212021;
+    
+    height: 115px;
+    position: absolute;
+    bottom: 0px;
+    left: 42%;
+    z-index: 50;    
+}
+
+.poster__content{    
+    width: 41%;
+    display: inline-block;    
+    position:absolute;
+    height: 300px;    
+    padding-inline: 60px;
+    padding-left: 80px;
+    color:#ffffff;
+    top:110px;
+
+}
+
+.poster__logo{
+    height: 4rem;
+    display: block;
+    margin-block: 2rem;
+}
+
+.poster__title{
+    display: block;
+    font-size: 1.8rem;
+    margin-block: .3rem;    
+}
+
+.poster__description{
+    margin-block: .2rem;
+    color: #ffffff87;
+    display: block;
+    font-style: normal;
+}
+
+.poster__link{
+    display: inline-block;
+    background: #168ffe;
+    color: white;
+    margin-block: 1.35rem;  
+    text-decoration: none;    
+    padding-inline: 1.5rem;  
+    padding-block: 1.2rem;
+    border-radius: 5rem;
+
+}
+
+.poster__preview{
+    display: inline-block;
+    width: 58%;
+    height: 600px;
+    position: absolute;
+    right: 0;
+}

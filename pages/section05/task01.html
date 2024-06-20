@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 01 - Formularios</title>
+    <link rel="stylesheet" href="../../styles/normalize.css">
+    <link rel="stylesheet" href="../../styles/section05/task01.css">
+</head>
+<body>
+    <main class="container">
+        <section class="container__section">
+            <article class="container__article">
+                <form class="form">
+                    <label for="name" class="form__label form__label--name">
+                        Nombre
+                        <input type="text" required id="name" class="form__input" placeholder="Nombre">
+                    </label>
+                    <label for="lastName" class="form__label form__label--name">
+                        Apellidos
+                        <input type="text" required id="lastName" class="form__input" placeholder="Apellidos">
+                    </label>
+                    <label for="user" class="form__label form__label--user">
+                        Nombre de usuario
+                        <input type="text" required id="user" class="form__input form__input--user">
+                        <span class="form__postfix">@gmail.com</span>
+                    </label>
+                    <label for="password" class="form__label">
+                        Contraseña
+                        <input type="password" required class="form__input" id="password">
+                    </label>
+                    <label for="password__confirm" class="form__label">
+                        Confirma tu contraseña
+                        <input type="password" required class="form__input" id="password__confirm">
+                    </label>
+                    <div class="form__group form__group--date">
+                        <span class="form__text">Fecha de nacimento</span>
+                        <label for="day" class="form__label form__label--date form__label--day">
+                            <input type="number" required class="form__input form__input--day" id="day" placeholder="Dia">
+                        </label>
+                        <label for="month" class="form__label form__label--date form__label--month">
+                            <select name="month" required id="month" class="form__select form__select--month">
+                                <option value="-" selected>Mes</option>
+                                <option value="0">Enero</option>
+                                <option value="1">Febrero</option>
+                                <option value="2">Marzo</option>
+                                <option value="3">Abril</option>
+                                <option value="4">Mayo</option>
+                                <option value="5">Junio</option>
+                                <option value="6">Julio</option>
+                                <option value="7">Agosto</option>
+                                <option value="8">Septiembre</option>
+                                <option value="9">Octubre</option>
+                                <option value="10">Noviembre</option>
+                                <option value="11">Diciembre</option>
+                            </select>
+                        </label>
+                        <label for="year" class="form__label form__label--date form__label--year">
+                            <input type="number" required class="form__input form__input--year" id="year" placeholder="Año">
+                        </label>
+                    </div>
+                    <label for="gender" class="form__label">
+                        Sexo
+                        <select name="gender" id="gender" class="form__select">
+                            <option value="-" selected>Selecciona tu género</option>
+                            <option value="1">Masculino</option>
+                            <option value="2">Femenino</option>
+                            <option value="3">Reptiloide</option>
+                            <option value="4">Alien</option>
+                            <option value="5">Androide</option>
+                            <option value="6">Otro</option>
+                        </select>
+                    </label>
+                    <label for="phone" class="form__label form__label--flag">
+                        <span class="form__text">Teléfono móvil</span>
+                        <img src="../../assets/section05/spain.png" alt="Bandera" class="form__flag">
+                        <input type="text" 
+                        pattern="(\+34|0034|34)?[ -]*(6|7|8|9)[ -]*([0-9][ -]*){8}"
+                        required class="form__input form__input--flag" id="phone" value="+34">
+                    </label>
+                    <label for="email" class="form__label">
+                        Tu dirección de correo electrónico actual
+                        <input type="text" required class="form__input" id="email">
+                    </label>
+                    <label for="location" class="form__label">
+                        Ubicación
+                        <select name="location" disabled id="location" class="form__select">
+                            <option value="1">España</option>
+                            <option value="1">Solo esta España</option>
+                        </select>
+                    </label>
+                    <button class="form__submit">Siguiente Paso</button>
+                </form>               
+            </article>
+        </section>
+    </main>
+</body>
+</html>
