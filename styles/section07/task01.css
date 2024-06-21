@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-white: #bcbdbd;
+    --color-gray:#a2a2a3;
+    --color-light-gray:#89888990;
+    --font-size-sm:.9rem;
+    --font-size-md:.95rem;
+    --font-size-lg:1.7rem;
+}
+
+*{
+    font-family: "Work Sans", sans-serif;
+    font-size: 1rem;    
+    
+}
+
+.nav,
+.main{
+    max-width: 600px;
+    margin: auto;    
+}
+
+.main{
+    color: #626262;
+}
+
+.header{
+    background: #323232;    
+    color: var(--color-white);
+    position: sticky;
+    top: 0;    
+    padding-block: 1.3rem;
+}
+
+.header--main{
+    position: static;
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    color:var(--color-light-gray);
+    padding-inline: 1rem;        
+    padding-top: 3rem;
+}
+
+.header__autor{
+    margin-block: 0;
+    font-size: var(--font-size-sm);
+}
+
+.header__posted{
+    font-size: var(--font-size-sm);
+}
+
+.header__section{
+    font-size: var(--font-size-md);
+    margin: 0;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-inline: 1rem;
+}
+
+.nav__list{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 31%;
+    margin: 0;
+}
+
+.nav__link{
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    transition: color .1s ease-in;
+}
+
+.nav__link:hover{
+    color: #fff;
+
+}
+
+/* Main */
+.main{
+    font-weight: 500;
+}
+
+.main__title{
+    font-size: var(--font-size-lg);
+    padding-block: .5rem;
+    width: 90%;
+}
+
+.main__paragraph{
+    color: var(--color-gray);
+    font-size: var(--font-size-md);
+    line-height: 1.35;
+    padding-block: .5rem;
+}
+
+
+/* Footer */
+.footer{
+    border-top: 2px solid var(--color-light-gray);
+    margin-top: 3rem;
+    color: var(--color-light-gray);
+    padding-block: 1.3rem ;
+}
+
+.footer__title{
+    margin: 0;
+}
+
+.nav__list--footer{
+    width: 36.5%;
+}
+
+.nav__link--footer:hover{
+    color: #000;
+
+}

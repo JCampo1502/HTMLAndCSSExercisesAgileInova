@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --font-size-box:1.5rem;
+    --font-size-lg:1.5rem;
+    --font-size-md:1rem;
+    --font-size-sm:.8rem;
+    --blue:#57bcdb;
+    --orange:#ffa500;
+}
+
+*{
+    font-family: "Oswald", sans-serif;
+    line-height: 1.2;    
+    text-decoration: none;
+    font-style: normal;
+}
+
+body{
+    background: #333;
+    color: white;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    max-width: 1320px;
+    margin: auto;
+}
+
+.main__subtitle{
+    font-size: var(--font-size-md);
+    color: var(--orange);
+}
+
+.main__property{
+    font-size: var(--font-size-sm);
+}
+
+.main__description{
+    font-size: var(--font-size-sm);
+    color: var(--blue);
+}
+
+.form__input:checked ~ .form__field{
+    color: var(--orange);
+}
+
+.form{
+    padding: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form__flex{    
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.form__section{
+    display: flex;
+    flex-direction: column;
+}
+
+.form__label{
+    padding-inline: .5rem;
+    padding-block: .2rem;
+}
+
+.form__input{
+    max-width: 50px;
+}
+
+/* List */
+.list{
+    padding: .1rem;
+    list-style: none;
+    display: flex;
+    padding:.4rem;
+    border:1px solid #ffffff60;
+}
+
+.list__single{
+    align-items: center;
+    height: 200px;
+}
+
+.list--wrap{
+    flex-wrap: wrap;
+    height: 600px;
+}
+
+.list--align_items{
+    height: 150px;
+}
+
+
+
+.list__item{
+    flex-grow: 1;
+    min-height: 100px;
+    width: 70px;
+    font-size: var(--font-size-box);
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    
+}
+
+.list--justify_content .list__item{
+    max-width: 16%
+}
+
+
+
+.list__item--selected{    
+    align-self: auto;
+}
+
+.list__item:nth-child(1){
+    background: #1bbc9d;
+}
+.list__item:nth-child(2){
+    background:#2ecd71 ;
+}
+.list__item:nth-child(3){
+    background: #3499dc;
+}
+.list__item:nth-child(4){
+    background: #9d59b9;
+}
+.list__item:nth-child(5){
+    background: #35485e;
+}
+.list__item:nth-child(6){
+    background: #16a086;
+}
+.list__item:nth-child(7){
+    background: #27ae61;
+}
+.list__item:nth-child(8){
+    background: #2b81b9;
+}
+.list__item:nth-child(9){
+    background: #8e45ad;
+}
+.list__item:nth-child(10){
+    background: #2c3f50;
+}
+.list__item:nth-child(11){
+    background: #f1c40f;
+}
+.list__item:nth-child(12){
+    background: #e67e22;
+}
+.list__item:nth-child(13){
+    background: #e84c3d;
+}
+.list__item:nth-child(14){
+    background: #ecf0f1;
+}
+.list__item:nth-child(15){
+    background: #96a7a7;
+}
+.list__item:nth-child(16){
+    background: #f49c14;
+}
+.list__item:nth-child(17){
+    background: #d45501;
+}
+.list__item:nth-child(18){
+    background: #c1382a;
+}
+.list__item:nth-child(19){
+    background: #bfc3c6;
+}
+.list__item:nth-child(20){
+    background: #808a8c;
+}
+
+.list--shrink .list__item{
+    width: auto;        
+    width: 25%;        
+}
+
+
+@media (max-width:300px) {
+    .list__item{
+        width: 60px;
+    }
+    .list--wrap{
+        height: 650px;
+    }
+    .list--grow .list__item{
+        width: auto;        
+    }
+}
+
+@media (min-width: 768px) {
+    .main{
+        flex-direction: row;
+    }
+
+    .main__section{
+        width: 50%;
+        margin-inline: .5rem;
+        padding-inline: 1rem;
+    }
+
+    .main__section--flex_items{
+        border-left: .05px solid #ffffff40;
+    }
+
+    .list__item{
+        width: 100px;
+    }
+
+    .list--grow .list__item{
+        width: auto;        
+    }
+
+    .list--wrap{
+        height: 800px;
+    }
+
+}
+
+@media (min-width:992px) {
+    .list__item{
+        width: 150px;
+    }
+
+    .list--grow .list__item{
+        width: auto;        
+        width: auto;
+    }
+
+    
+
+
+
+    .list--wrap{
+        height: 750px;
+    }
+}
+

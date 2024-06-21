@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 01 - Flex</title>
+    <link rel="stylesheet" href="../../styles/normalize.css">
+    <link rel="stylesheet" href="../../styles/section07/task03.css">
+    <script defer>
+        const SetValue = (element, property, value) => {            
+            if(!element || !property || !value)return;
+            element.style[property] = value;
+        }
+            
+        
+        document.addEventListener('change', (e)=>{            
+            let List = e.target.parentElement.parentElement.nextElementSibling;
+            if(!List || !List.classList.contains('list')) 
+                List = e.target.parentElement.parentElement.parentElement.nextElementSibling;
+            const Selected = List.querySelector('.list__item--selected');
+            const Elment = e.target;            
+            let {value, property} = e.target.dataset;
+            let item = List;            
+
+            if(
+                !List ||
+                !value ||
+                !property ||
+                !List.classList.contains('list')
+            )return
+            
+
+            if(!isNaN(value)){
+
+                item = List.querySelector(`.list__item:nth-child(${value})`);
+                value = Elment.value;
+                if(property=='flex-basis')value = `${value}%`;
+                
+            }else if(Selected){                
+                item = Selected;
+                return;
+            }            
+
+            SetValue(item, property, value);
+        })
+
+
+    </script>
+</head>
+<body>
+     <main class="main">
+        <section class="main__section main__section--flex_container">
+            <h2 class="main__title">Porpiedades para el contenedor flexible</h2>
+            <article class="main__article" id="flexDirection">
+                <h3 class="main__subtitle">
+                    #FLEX-DIRECTION <em class="main__description">(propiedad para el contenedor flexible)</em>
+                </h3>
+                <form class="form">
+                    <label class="form__label form__label--radio" for="flexDirection__row">
+                        <input type="radio" name="flexDirection" data-value="row" data-property="flex-direction" class="form__input form__input--radio" id="flexDirection__row" checked>
+                        <span class="form__field">row:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="flexDirection__rowReverse">
+                        <input data-value="row-reverse" data-property="flex-direction" type="radio" name="flexDirection" class="form__input form__input--radio" id="flexDirection__rowReverse">
+                        <span class="form__field">row-reverse:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="flexDirection__column">
+                        <input data-value="column" data-property="flex-direction" type="radio" name="flexDirection" class="form__input form__input--radio" id="flexDirection__column">
+                        <span class="form__field">column:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="flexDirection__columnReverse">
+                        <input data-value="column-reverse" data-property="flex-direction" type="radio" name="flexDirection" class="form__input form__input--radio" id="flexDirection__columnReverse">
+                        <span class="form__field">column-reverse:</span>
+                    </label>
+                </form>
+                <ul class="list">
+                    <li class="list__item">1</li>
+                    <li class="list__item">2</li>
+                    <li class="list__item">3</li>
+                    <li class="list__item">4</li>
+                    <li class="list__item">5</li>
+                </ul>
+            </article>
+            <article class="main__article" id="flexWrap">
+                <h3 class="main__subtitle">
+                    #FLEX-WRAP <em class="main__description">(propiedad para el contenedor flexible)</em>
+                </h3>
+                <form class="form">
+                    <label class="form__label form__label--radio" for="flexWrap__noWrap">
+                        <input data-value="nowrap" data-property="flex-wrap" type="radio" name="flexWrap" class="form__input form__input--radio" id="flexWrap__noWrap" checked>
+                        <span class="form__field">nowrap:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="flexWrap__wrap">
+                        <input data-value="wrap" data-property="flex-wrap" type="radio" name="flexWrap" class="form__input form__input--radio" id="flexWrap__wrap">
+                        <span class="form__field">wrap:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="flexWrap__wrapReverse">
+                        <input data-value="wrap-reverse" data-property="flex-wrap" type="radio" name="flexWrap" class="form__input form__input--radio" id="flexWrap__wrapReverse">
+                        <span class="form__field">wrap-reverse:</span>
+                    </label>                    
+                </form>
+                <ul class="list">
+                    <li class="list__item">1</li>
+                    <li class="list__item">2</li>
+                    <li class="list__item">3</li>
+                    <li class="list__item">4</li>
+                    <li class="list__item">5</li>
+                </ul>
+            </article>
+            <article class="main__article" id="alignItems">
+                <h3 class="main__subtitle" >
+                    #ALIGN-ITEMS <em class="main__description">(propiedad para el contenedor flexible)</em>
+                </h3>
+                <form class="form form">
+                    <label class="form__label form__label--radio" for="alignItems__flexStart">
+                        <input data-value="flex-start" data-property="align-items" type="radio" name="alignItems" class="form__input form__input--radio" id="alignItems__flexStart">
+                        <span class="form__field">flex-start:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="alignItems__flexEnd">
+                        <input data-value="flex-end" data-property="align-items" type="radio" name="alignItems" class="form__input form__input--radio" id="alignItems__flexEnd">
+                        <span class="form__field">flex-end:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="alignItems__center">
+                        <input data-value="center" data-property="align-items" type="radio" name="alignItems" class="form__input form__input--radio" id="alignItems__center">
+                        <span class="form__field">center:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="alignItems__baseline">
+                        <input data-value="baseline" data-property="align-items" type="radio" name="alignItems" class="form__input form__input--radio" id="alignItems__baseline">
+                        <span class="form__field">baseline:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="alignItems__stretch">
+                        <input data-value="stretch" data-property="align-items" type="radio" name="alignItems" class="form__input form__input--radio" id="alignItems__stretch" checked>
+                        <span class="form__field">stretch:</span>
+                    </label>
+                </form>
+                <ul class="list list--align_items">
+                    <li class="list__item">1</li>
+                    <li class="list__item">2</li>
+                    <li class="list__item">3</li>
+                    <li class="list__item">4</li>
+                    <li class="list__item">5</li>
+                </ul>
+            </article>
+            <article class="main__article" id="justifyContent">
+                <h3 class="main__subtitle">
+                    #JUSTIFY-CONTENT <em class="main__description">(propiedad para el contenedor flexible)</em>
+                </h3>
+                <form class="form form">
+                    <label class="form__label form__label--radio" for="justifyContent__flexStart">
+                        <input data-value="flex-start" data-property="justify-content" type="radio" name="justifyContent" class="form__input form__input--radio" id="justifyContent__flexStart" checked>
+                        <span class="form__field">flex-start:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="justifyContent__flexEnd">
+                        <input data-value="flex-end" data-property="justify-content" type="radio" name="justifyContent" class="form__input form__input--radio" id="justifyContent__flexEnd">
+                        <span class="form__field">flex-end:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="justifyContent__spaceBetween">
+                        <input data-value="space-between" data-property="justify-content" type="radio" name="justifyContent" class="form__input form__input--radio" id="justifyContent__spaceBetween">
+                        <span class="form__field">space-between:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="justifyContent__center">
+                        <input data-value="center" data-property="justify-content" type="radio" name="justifyContent" class="form__input form__input--radio" id="justifyContent__center">
+                        <span class="form__field">center:</span>
+                    </label>                    
+                    <label class="form__label form__label--radio" for="justifyContent__spaceAround">
+                        <input data-value="space-around" data-property="justify-content" type="radio" name="justifyContent" class="form__input form__input--radio" id="justifyContent__spaceAround">
+                        <span class="form__field">space-around:</span>
+                    </label>
+                </form>
+                <ul class="list list--justify_content">
+                    <li class="list__item">1</li>
+                    <li class="list__item">2</li>
+                    <li class="list__item">3</li>
+                    <li class="list__item">4</li>
+                    <li class="list__item">5</li>
+                </ul>
+            </article>
+            <article class="main__article" id="alignContent">
+                <h3 class="main__subtitle">
+                    #ALIGN-CONTENT <em class="main__description">(propiedad para el contenedor flexible)</em>
+                </h3>
+                <form class="form form">
+                    <label class="form__label form__label--radio" for="alignContent__flexStart">
+                        <input data-value="flex-start" data-property="align-content" type="radio" name="alignContent" class="form__input form__input--radio" id="alignContent__flexStart">
+                        <span class="form__field">flex-start:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="alignContent__flexEnd">
+                        <input data-value="flex-end" data-property="align-content" type="radio" name="alignContent" class="form__input form__input--radio" id="alignContent__flexEnd">
+                        <span class="form__field">flex-end:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="alignContent__center">
+                        <input data-value="center" data-property="align-content" type="radio" name="alignContent" class="form__input form__input--radio" id="alignContent__center">
+                        <span class="form__field">center:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="alignContent__spaceBetween">
+                        <input data-value="space-between" data-property="align-content" type="radio" name="alignContent" class="form__input form__input--radio" id="alignContent__spaceBetween">
+                        <span class="form__field">space-between:</span>
+                    </label>               
+                    <label class="form__label form__label--radio" for="alignContent__spaceAround">
+                        <input data-value="space-around" data-property="align-content" type="radio" name="alignContent" class="form__input form__input--radio" id="alignContent__spaceAround">
+                        <span class="form__field">space-around:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="alignContent__stretch">
+                        <input data-value="stretch" data-property="align-content" type="radio" name="alignContent" class="form__input form__input--radio" id="alignContent__stretch" checked>
+                        <span class="form__field">stretch:</span>
+                    </label>
+                </form>
+                <ul class="list list--wrap">
+                    <li class="list__item">1</li>
+                    <li class="list__item">2</li>
+                    <li class="list__item">3</li>
+                    <li class="list__item">4</li>
+                    <li class="list__item">5</li>
+                    <li class="list__item">6</li>
+                    <li class="list__item">7</li>
+                    <li class="list__item">8</li>
+                    <li class="list__item">9</li>
+                    <li class="list__item">10</li>
+                    <li class="list__item">11</li>
+                    <li class="list__item">12</li>
+                    <li class="list__item">13</li>
+                    <li class="list__item">14</li>
+                    <li class="list__item">15</li>
+                    <li class="list__item">16</li>
+                    <li class="list__item">17</li>
+                    <li class="list__item">18</li>
+                    <li class="list__item">19</li>
+                    <li class="list__item">20</li>
+                </ul>
+            </article>
+        </section>
+        <section class="main__section main__section--flex_items" >
+            <h2 class="main__title">Propiedades para los elementos flexibles</h2>
+            <article class="main__article" id="alignSelf">
+                <h3 class="main__subtitle">
+                    #ALIGN-SELF <em class="main__description">(propiedades para los elementos flexibles)</em>
+                </h3>
+                <form class="form form">
+                    <label class="form__label form__label--radio" for="alignSelf__auto">
+                        <input data-value="auto" data-property="align-self" type="radio" name="alignSelf" class="form__input form__input--radio" id="alignSelf__auto" checked>
+                        <span class="form__field">auto:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="alignSelf__flexStart">
+                        <input data-value="flex-start" data-property="align-self" type="radio" name="alignSelf" class="form__input form__input--radio" id="alignSelf__flexStart">
+                        <span class="form__field">flex-start:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="alignSelf__flexEnd">
+                        <input data-value="flex-end" data-property="align-self" type="radio" name="alignSelf" class="form__input form__input--radio" id="alignSelf__flexEnd">
+                        <span class="form__field">flex-end:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="alignSelf__center">
+                        <input data-value="center" data-property="align-self" type="radio" name="alignSelf" class="form__input form__input--radio" id="alignSelf__center">
+                        <span class="form__field">center:</span>
+                    </label>                    
+                    <label class="form__label form__label--radio" for="alignSelf__baseline">
+                        <input data-value="baseline" data-property="align-self" type="radio" name="alignSelf" class="form__input form__input--radio" id="alignSelf__baseline">
+                        <span class="form__field">baseline:</span>
+                    </label>
+                    <label class="form__label form__label--radio" for="alignSelf__stretch">
+                        <input data-value="stretch" data-property="align-self" type="radio" name="alignSelf" class="form__input form__input--radio" id="alignSelf__stretch">
+                        <span class="form__field">stretch:</span>
+                    </label>
+                </form>
+                <ul class="list list__single">
+                    <li class="list__item">1</li>
+                    <li class="list__item">2</li>
+                    <li class="list__item list__item--selected">3</li>
+                    <li class="list__item">4</li>
+                    <li class="list__item">5</li>
+                </ul>
+            </article>
+            <article class="main__article" id="flexGrow">
+                <h3 class="main__subtitle">
+                    #FLEX-GROW <em class="main__description">(propiedades para los elementos flexibles)</em>
+                </h3>
+                <form class="form">
+                    <label class="form__label" for="flexGrow__element01">
+                        <input data-value="1" data-property="flex-grow" type="number" class="form__input" id="flexGrow__element01">
+                        <span class="form__field">elemento 1:</span>
+                    </label>
+                    <label class="form__label" for="flexGrow__element02">
+                        <input data-value="2" data-property="flex-grow" type="number" class="form__input" id="flexGrow__element02">
+                        <span class="form__field">elemento 2:</span>
+                    </label>
+                    <label class="form__label" for="flexGrow__element03">
+                        <input data-value="3" data-property="flex-grow" type="number" class="form__input" id="flexGrow__element03">
+                        <span class="form__field">elemento 3:</span>
+                    </label>
+                    <label class="form__label" for="flexGrow__element04">
+                        <input data-value="4" data-property="flex-grow" type="number" class="form__input" id="flexGrow__element04">
+                        <span class="form__field">elemento 4:</span>
+                    </label>
+                    <label class="form__label" for="flexGrow__element05">
+                        <input data-value="5" data-property="flex-grow" type="number" class="form__input" id="flexGrow__element05">
+                        <span class="form__field">elemento 5:</span>
+                    </label>
+                </form>
+                <ul class="list list--grow">
+                    <li class="list__item">1</li>
+                    <li class="list__item">2</li>
+                    <li class="list__item">3</li>
+                    <li class="list__item">4</li>
+                    <li class="list__item">5</li>
+                </ul>
+            </article>
+            <article class="main__article" id="flexShrink">
+                <h3 class="main__subtitle">
+                    #FLEX-SHRINK <em class="main__description">(propiedades para los elementos flexibles)</em>
+                </h3>
+                <form class="form">
+                    <label class="form__label" for="flexShrink__element01">
+                        <input data-value="1" data-property="flex-shrink" type="number" class="form__input" id="flexShrink__element01">
+                        <span class="form__field">elemento 1:</span>
+                    </label>
+                    <label class="form__label" for="flexShrink__element02">
+                        <input data-value="2" data-property="flex-shrink" type="number" class="form__input" id="flexShrink__element02">
+                        <span class="form__field">elemento 2:</span>
+                    </label>
+                    <label class="form__label" for="flexShrink__element03">
+                        <input data-value="3" data-property="flex-shrink" type="number" class="form__input" id="flexShrink__element03">
+                        <span class="form__field">elemento 3:</span>
+                    </label>
+                    <label class="form__label" for="flexShrink__element04">
+                        <input data-value="4" data-property="flex-shrink" type="number" class="form__input" id="flexShrink__element04">
+                        <span class="form__field">elemento 4:</span>
+                    </label>
+                    <label class="form__label" for="flexShrink__element05">
+                        <input data-value="5" data-property="flex-shrink" type="number" class="form__input" id="flexShrink__element05">
+                        <span class="form__field">elemento 5:</span>
+                    </label>
+                </form>
+                <ul class="list list--shrink">
+                    <li class="list__item">1</li>
+                    <li class="list__item">2</li>
+                    <li class="list__item">3</li>
+                    <li class="list__item">4</li>
+                    <li class="list__item">5</li>
+                </ul>
+            </article>
+            <article class="main__article" id="flex">
+                <h3 class="main__subtitle">
+                    #FLEX <em class="main__description">(propiedades para los elementos flexibles)</em>
+                </h3>
+                <p class="main__property">
+                    .item {flex: flex-grow [flex-shrick] [flex-basis]; }
+                </p>
+                <form class="form form__flex">
+                    <div class="form__section">
+                        <h4 class="form__title">Elemento 1</h4>
+                        <label class="form__label" for="element01__flexBasis">
+                            <input data-value="1" data-property="flex-basis" type="number" class="form__input" id="element01__flexBasis" value="50">
+                            <span class="form__field">flex-basis %</span>
+                        </label>
+                        <label class="form__label" for="element01__flexGrow">
+                            <input data-value="1" data-property="flex-grow" type="number" class="form__input" id="element01__flexGrow">
+                            <span class="form__field">flex-grow</span>
+                        </label>
+                        <label class="form__label" for="element01__flexShrink">
+                            <input data-value="1" data-property="flex-shrink" type="number" class="form__input" id="element01__flexShrink">
+                            <span class="form__field">flex-shrink</span>
+                        </label>
+                    </div>
+                    <div class="form__section">
+                        <h4 class="form__title">Elemento 2</h4>
+                        <label class="form__label" for="element02__flexBasis">
+                            <input data-value="2" data-property="flex-basis" type="number" class="form__input" id="element02__flexBasis" value="50">
+                            <span class="form__field">flex-basis %</span>
+                        </label>
+                        <label class="form__label" for="element02__flexGrow">
+                            <input data-value="2" data-property="flex-grow" type="number" class="form__input" id="element02__flexGrow">
+                            <span class="form__field">flex-grow</span>
+                        </label>
+                        <label class="form__label" for="element02__flexShrink">
+                            <input data-value="2" data-property="flex-shrink" type="number" class="form__input" id="element02__flexShrink">
+                            <span class="form__field">flex-shrink</span>
+                        </label>
+                    </div>
+                </form>
+                <ul class="list list--grow">
+                    <li class="list__item">1</li>
+                    <li class="list__item">2</li>
+                </ul>
+            </article>
+            <article class="main__article" id="order">
+                <h3 class="main__subtitle">
+                    #ORDER <em class="main__description">(propiedades para los elementos flexibles)</em>
+                </h3>
+                <form class="form">
+                    <label class="form__label" for="order__element01">
+                        <input data-value="1" data-property="order" type="number" class="form__input" id="order__element01">
+                        <span class="form__field">elemento 1:</span>
+                    </label>
+                    <label class="form__label" for="order__element02">
+                        <input data-value="2" data-property="order" type="number" class="form__input" id="order__element02">
+                        <span class="form__field">elemento 2:</span>
+                    </label>
+                    <label class="form__label" for="order__element03">
+                        <input data-value="3" data-property="order" type="number" class="form__input" id="order__element03">
+                        <span class="form__field">elemento 3:</span>
+                    </label>
+                    <label class="form__label" for="order__element04">
+                        <input data-value="4" data-property="order" type="number" class="form__input" id="order__element04">
+                        <span class="form__field">elemento 4:</span>
+                    </label>
+                    <label class="form__label" for="order__element05">
+                        <input data-value="5" data-property="order" type="number" class="form__input" id="order__element05">
+                        <span class="form__field">elemento 5:</span>
+                    </label>
+                </form>
+                <ul class="list ">
+                    <li class="list__item">1</li>
+                    <li class="list__item">2</li>
+                    <li class="list__item">3</li>
+                    <li class="list__item">4</li>
+                    <li class="list__item">5</li>
+                </ul>
+            </article>
+        </section>
+     </main>
+</body>
+</html>
