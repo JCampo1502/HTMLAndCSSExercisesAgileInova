@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Work Sans", sans-serif;
+    font-size: 1rem;       
+}
+
+
+
+.main__section{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/section08/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-clip: content-box;    
+}
+
+.main__title{
+    position: absolute;
+    height: 20%;
+    width: 40%;
+    text-align: center;
+    animation-name: title;
+    animation-duration: 4s;
+    animation-iteration-count: 1;    
+    top: 40%;
+    left: 30%;
+}
+
+@keyframes title{
+    from{
+        top:-20%;
+        left: -40%;
+    }
+    to{
+        top: 40%;
+        left: 30%;
+    }
+}
+

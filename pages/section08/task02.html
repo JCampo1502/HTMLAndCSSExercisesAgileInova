@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 01 - Animaciones en CSS</title>
+    <link rel="stylesheet" href="../../styles/normalize.css">
+    <link rel="stylesheet" href="../../styles/section08/task02.css">
+    
+</head>
+<body>
+    <header class="header">
+        <div class="bubble"></div>
+        <div class="character">
+            <div class="hair">
+                
+            </div>
+            <div class="face">
+                <div class="eyes">
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                </div>
+                <div class="mouth"></div>
+            </div>
+            <div class="arms">
+                <div class="arm arm--right"></div>
+                <div class="arm arm--left"></div>
+            </div>
+            <div class="legs">
+                <div class="leg"></div>
+                <div class="leg"></div>
+                <div class="leg"></div>
+                <div class="leg"></div>
+                <div class="leg"></div>
+            </div>
+        </div>
+    </header>
+    <script >                
+        /* Add bubles */
+        const Header = document.querySelector('.header');
+        for (let i = 0; i < Math.ceil(Math.random()*50); i++) {
+            const RandomDelay = Math.ceil(Math.random() * 3);
+            const RandomPosition = Math.ceil(Math.random() * 80);
+            const RandomSpace =Math.random() * 30;
+            const Bubble = document.createElement('div')
+            Bubble.classList.add('bubble')
+            Bubble.style['animation-delay']=`${RandomDelay * i/10}s`;
+            Bubble.style['left']=`${RandomPosition}%`;
+            Bubble.style['width']=`${RandomSpace}px`;
+            Bubble.style['height']=`${RandomSpace}px`;
+            Bubble.style['height']=`${RandomSpace}px`;
+            Header.appendChild(Bubble);
+
+
+        }
+
+        /* set legs delay */
+        document.querySelectorAll('.leg').forEach(element => {
+            const RandomNumber = Math.random() * 3;
+            element.style['animation-delay']=`${RandomNumber}s`
+        })
+
+        
+    </script>
+</body>
+</html>
