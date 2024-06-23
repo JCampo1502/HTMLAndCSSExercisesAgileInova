@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+*{
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1rem;   
+    line-height: 1.2;
+    font-size: var(--font-size-sm);
+}
+
+:root{
+  --font-size-lg: calc(1rem + 1.5vw);
+  --font-size-md: calc(1rem + 1vw);
+  --font-size-sm: calc(.5rem + .8vw);
+  --color-black: #010001;
+  --color-white: #ffffff;
+}
+
+
+body{
+  /** From the web site https://css-pattern.com/  */
+    --s: 162px; /* control the size*/
+    --c1: #cd2942;
+    --c2: #62928c;
+    --c3: #e8cba9;
+    --c4: #33152e;
+    --c5: #414352;
+    
+    --_g: conic-gradient(from 30deg at 50% 25%,#0000 300deg,var(--c1) 0);
+    background:
+      var(--_g) calc(0.2885*var(--s)) calc(7*var(--s)/12),
+      var(--_g) 0 calc(var(--s)/12),
+      conic-gradient(from 120deg at 50% calc(250%/3),var(--c2) 120deg,#0000 0),
+      repeating-conic-gradient(from 30deg,#0000 0 60deg,var(--c3) 0 120deg),
+      repeating-conic-gradient(var(--c4) 0 60deg,var(--c2) 0 120deg,var(--c5) 0 180deg);
+    background-size: calc(0.577*var(--s)) var(--s);
+} 
+
+em{
+  font-weight: bold;
+}
+
+.header,
+.aside,
+.main{
+  background: var(--color-white);        
+  padding-inline: .5rem;
+}
+
+.list__icon{
+  width: 30px;
+  height: 20px;
+}
+
+.main__img{
+  height: calc(4rem + 2vw);
+  width: calc(4rem + 2vw);
+  background: var(--color-black);  
+  padding: .8rem;
+  border-radius: 5rem;
+}
+
+
+/* header */
+.header{
+  background: var(--color-white);  
+  border-top: .4rem solid  var(--c2);
+  padding: 1rem;
+  font-size: var(--font-size-md);
+}
+
+.list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.list__link{
+  display: block;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-black);
+  padding-inline: 1rem;
+  transition: background .5s ease;
+}
+
+.list__link--selected,
+.list__link:hover{
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Main */
+.main{
+  padding-block: 1rem;
+}
+
+.main__title{
+  font-size: var(--font-size-lg);
+}
+
+.main__title--section{
+  width: fit-content;
+  font-size: var(--font-size-md);
+  position: relative;
+  
+}
+
+.main__title--section::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: .2rem;
+  background: var(--color-black);
+  bottom: -.4rem;
+}
+
+.main__subtitle{
+  font-size: var(--font-size-lg);
+}
+
+.main__description{  
+  margin-block: 2rem;
+}
+
+.cite{
+  display: flex;
+  flex-direction: column-reverse;
+  padding-left: 1rem;
+  padding-block: .5rem;
+  position: relative;
+}
+
+.cite::before{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: .35rem;
+  background: var(--color-black);
+  left: 0;
+  top: 0;
+  border-radius: .2rem;
+}
+
+.cite__author{
+  margin-top: .5rem;
+}
+
+/* Aside */
+.aside{
+  display: none;
+  padding: 3.5rem 1rem;
+}
+
+.aside__title{
+  font-size: var(--font-size-md);
+  margin:1.5rem 0;
+}
+
+.list--ordered{
+  list-style:decimal;
+  padding-left: 1rem;
+}
+
+.list__section{
+  display: block;  
+  display: flex; 
+  align-items: start;  
+  margin-block: 1rem;
+  font-weight: bold;
+}
+
+.list__icon{
+  margin-right: .5rem;
+}
+
+.list--ordered .list__item{
+  height: 2rem;
+  margin-block: .5rem;
+  margin-left: 1rem;  
+  cursor: pointer;  
+  position: relative;
+}
+
+.list--ordered .list__item::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: .2rem;
+  background: var(--color-black);
+  bottom: 0;
+}
+
+.list--ordered .list__item:hover::before{
+  width: 100%;
+}
+
+/* Medias */
+@media (min-width:730px) {
+  .main{
+    top: min(50vh, 300px);
+  }
+}
+
+@media (min-width:992px) {
+  body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: min(25vh, 300px) 1fr 1fr 1fr;
+  }
+
+  .header{
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    margin: 0;
+  }
+
+  .aside{
+    display: block;
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 3;    
+  }
+
+  .main{
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 3;
+
+  }
+
+  .main{
+    top: min(60vh, 400px);
+  }
+}

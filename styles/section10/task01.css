@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+*{
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1rem;   
+    line-height: 1.2;
+    font-size: var(--font-size-md);
+}
+
+:root{
+    --font-size-lg: min(calc(1rem + 1.5vw), 3rem);
+    --font-size-md: min(calc(.5rem + .8vw), 1rem);   
+}
+
+.main__container{
+    margin: 2em auto 0;
+    width: 400px;
+    border: 1px solid red;
+    padding: 1em;
+}
+
+.main__picture{
+    width: 100%;
+    height: 300px;
+    width: 200px;
+    float: left;
+    margin:0 .5rem .5rem 0;
+}
+
+.main__title{
+    font-size: var(--font-size-lg);
+}
+
+.main__paragraph{
+    border: 1 dashed pink;
+    max-height: 222px;
+    max-width: 1230px;    
+    padding: 0 .5em;
+    overflow-y: auto;
+
+}
+
+@media (min-width:768px) {
+    .main__container{
+        width: 700px;
+    }
+    .main__paragraph{
+        max-height: 400px;
+    }
+}
+@media (min-width:1140px) {
+    .main__container{
+        width: 1000px;
+    }
+    .main__paragraph{
+        max-height: 800px;        
+    }
+}
