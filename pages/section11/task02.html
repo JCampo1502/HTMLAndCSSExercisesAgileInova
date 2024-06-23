@@ -17,19 +17,21 @@
     <div id ="principal" class="container contenido-principal">
 
         <div id="" class="row justify-content-center">
-            <form class="col-10 col-md-8" id="formulario">
-
+            <form class="col-10 col-md-8 row justify-content-evenly py-4" id="formulario">
                  <div class="container text-center py-3 col-md-8">
-                        <input class="form-control text-center " type="text" placeholder="Cantidad de dinero">
+                        <label for="moneda" class="form-label">Dinero</label>
+                        <input class="form-control text-center " id="amount" name="amount" type="text" placeholder="Cantidad de dinero">
                     </div>
-                <div class="formulario-cotizar row">
-                    <div class="form-group col-12 col-md-4">
-                        <select id="moneda" class="form-control"></select>
+                <div class="formulario-cotizar row" id="form">
+                    <div class="form-group col-12 col-md-4 my-4">
+                        <label for="moneda" class="form-label">Moneda</label>
+                        <select id="moneda" name="moneda" class="form-control"></select>
                     </div>
-                    <div class="form-group col-12 col-md-4">
-                        <select id="criptomoneda" class="form-control"></select>
+                    <div class="form-group col-12 col-md-4 my-4">
+                        <label for="criptomoneda" class="form-label">Cripto Moneda</label>
+                        <select id="criptomoneda" name="criptomoneda" class="form-control"></select>
                     </div>
-                    <div class="form-group col-12 col-md-4">
+                    <div class="form-group col-12 col-md-4 d-flex align-items-center">
                         <button type="submit" class="btn btn-success">Convertir</button>
                        
                     </div>
